@@ -1,0 +1,23 @@
+{
+  "name": "react-app-nodejs",
+  "version": "1.0.0",
+  "description": "This is a react application implementing nodejs backend framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osagiefe/react-app-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osagiefe/react-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/osagiefe/react-app-nodejs#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
