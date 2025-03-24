@@ -19,5 +19,6 @@
   "homepage": "https://github.com/osagiefe/react-app-nodejs#readme",
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "devDependencies": {}
 }
