@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  
-   tools {nodejs "node"}
-    
   stages {
     stage("Clone code from GitHub") {
             steps {
@@ -13,6 +10,7 @@ pipeline {
         }
      
     stage('React-app Node JS Build') {
+        nodejs{ ("node")}
       steps {
         sh 'npm install'
       }
