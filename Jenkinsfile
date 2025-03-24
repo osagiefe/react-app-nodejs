@@ -8,10 +8,15 @@ pipeline {
                 }
             }
         }
+    stage('Nodejs as Node'){
+        steps{
+            nodejs('Node')
+        }
+    }
+
      
     stage('React-app Node JS Build') {
-        nodejs{ ("node")}
-      steps {
+        steps {
         sh 'npm install'
       }
     }
