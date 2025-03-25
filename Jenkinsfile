@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  
+   tools {nodejs "node"}
+    
   stages {
     stage("Clone code from GitHub") {
             steps {
@@ -8,32 +11,34 @@ pipeline {
                 }
             }
         }
-
-    stage('React-app Node JS Build') {
-        steps {
-                script{nodejs('Node')
-                sh 'npm install'
-                }
-            }
      
-     stage('Build React-app Node JS Docker Image') {
+    stage('React App NodeJS Build') {
+      steps {
+        sh 'npm install'
+      }
+    }
+  
+     stage('Build React App NodeJS Image') {
             steps {
                 script {
-                  sh 'docker build -t osagiefe/react-app-nodejs-1.0 .'
+                  sh 'docker build -t osagiefe/react-apt-1.0 .'
                 }
             }
         }
-     stage('Push Docker Image to DockerHub') {
+
+
+        stage('Push React App NodeJS Image to DockerHub') {
             steps {
                 script {
                  withCredentials([string(credentialsId: 'FelixID', variable: 'FelixID')]) {
                     sh 'docker login -u osagiefe -p ${FelixID}'
             }
-            sh 'docker push osagiefe/react-app-nodejs-1.0'
+            sh 'docker push osagiefe/react-apt-1.0'
         }
             }   
-    }     
+        }
+         
 
-    }
-    }
+
+  }
 }
